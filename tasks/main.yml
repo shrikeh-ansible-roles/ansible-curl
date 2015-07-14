@@ -1,43 +1,14 @@
 ---
-- name: Install cURL on Homebrew (Mac OSX) systems
-  homebrew:
-    name: curl
-    state: "{{ curl_state }}"
-    update_homebrew: "{{ curl_update_brew }}"
-  when: ansible_os_family == 'Darwin'
+- name: Test if cURL exists as many systems already have it
+  command:  command -v curly
+  register: curl_exists
+  ignore_errors: yes
 
-- name: Install cURL on Debian-flavours
-  apt:
-    name: curl
-    state: "{{ curl_state }}"
-    update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'apt'
+- name: Debug result
+  debug:
+    var: curl_exists
 
-- name: Install cURL on CentOS-flavours
-  yum:
-    name: curl
-    state: "{{ curl_state }}"
-    update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'yum'
-
-- name: Install cURL via Zypper
-  zypper:
-    name: curl
-    state: "{{ curl_state }}"
-    update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'zypper'
-
-- name: Install cURL via pacman
-  pacman:
-    name: curl
-    state: "{{ curl_state }}"
-    update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'pacman'
-
-- name: Install cURL via Portage
-  portage:
-    name: curl
-    state: "{{ curl_state }}"
-    update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'portage'
+- name: Install cURL
+  include: install.yml
+  when: curl_exists.stdout == ''
 ...
