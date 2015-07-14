@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: "shrikeh"
+  description: "Install cURL (http://curl.haxx.se/) in a cross-platform way"
+  company: "B H Hanlon Ventures Ltd"
+  min_ansible_version: 1.5
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Fedora
+      versions:
+        - 22
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - precise
+        - quantal
+        - raring
+        - saucy
+        - trusty
+  categories:
+    - networking
+
+dependencies: []
+...

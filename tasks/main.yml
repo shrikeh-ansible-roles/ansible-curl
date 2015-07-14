@@ -18,5 +18,26 @@
     name: curl
     state: "{{ curl_state }}"
     update_cache: "{{ curl_update_pkg_mgr }}"
-  when: ansible_pkg_mgr == 'apt'
+  when: ansible_pkg_mgr == 'yum'
+
+- name: Install cURL via Zypper
+  zypper:
+    name: curl
+    state: "{{ curl_state }}"
+    update_cache: "{{ curl_update_pkg_mgr }}"
+  when: ansible_pkg_mgr == 'zypper'
+
+- name: Install cURL via pacman
+  pacman:
+    name: curl
+    state: "{{ curl_state }}"
+    update_cache: "{{ curl_update_pkg_mgr }}"
+  when: ansible_pkg_mgr == 'pacman'
+
+- name: Install cURL via Portage
+  portage:
+    name: curl
+    state: "{{ curl_state }}"
+    update_cache: "{{ curl_update_pkg_mgr }}"
+  when: ansible_pkg_mgr == 'portage'
 ...
