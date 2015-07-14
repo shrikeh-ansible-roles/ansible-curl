@@ -1,0 +1,22 @@
+---
+- name: Install cURL on Homebrew (Mac OSX) systems
+  homebrew:
+    name: curl
+    state: "{{ curl_state }}"
+    update_homebrew: "{{ curl_update_brew }}"
+  when: ansible_os_family == 'Darwin'
+
+- name: Install cURL on Debian-flavours
+  apt:
+    name: curl
+    state: "{{ curl_state }}"
+    update_cache: "{{ curl_update_pkg_mgr }}"
+  when: ansible_pkg_mgr == 'apt'
+
+- name: Install cURL on CentOS-flavours
+  yum:
+    name: curl
+    state: "{{ curl_state }}"
+    update_cache: "{{ curl_update_pkg_mgr }}"
+  when: ansible_pkg_mgr == 'apt'
+...

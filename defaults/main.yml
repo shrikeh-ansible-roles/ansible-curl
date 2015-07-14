@@ -1,0 +1,4 @@
+---
+curl_state: 'latest'
+curl_update_pkg_mgr: no
+...
