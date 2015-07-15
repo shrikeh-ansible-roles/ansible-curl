@@ -1,14 +1,10 @@
 ---
 - name: Test if cURL exists as many systems already have it
-  command:  command -v curly
+  command:  command -v curl
   register: curl_exists
   ignore_errors: yes
 
-- name: Debug result
-  debug:
-    var: curl_exists
-
 - name: Install cURL
   include: install.yml
-  when: curl_exists.stdout == ''
+  when: curl_exists.failed is defined and curl_exists.failed
 ...
