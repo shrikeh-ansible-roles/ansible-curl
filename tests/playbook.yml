@@ -1,5 +1,15 @@
 ---
-- hosts: all
+- hosts: local
+  connection: local
+  gather_facts: no
   tasks:
-    - include: ../tasks/main.yml
+    - name: Add test host
+      add_host:
+        name: "{{ lookup('env', 'TEST_ANSIBLE_HOSTNAME') }}"
+        group: test
+        ansible_connection: "{{ lookup('env', 'TEST_ANSIBLE_CONNECTION') }}"
+
+- hosts: test
+  roles:
+    - { role: '../../' }
 ...
