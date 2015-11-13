@@ -1,7 +1,6 @@
 # ansible-curl
-[![Build Status](https://img.shields.io/travis/shrikeh/ansible-curl.svg)][build_status]
 [![Galaxy](http://img.shields.io/badge/galaxy-shrikeh.curl-blue.svg)] [galaxy]
-
+[![Build Status](https://img.shields.io/travis/shrikeh/ansible-curl.svg)][build_status]
 [![GitHub Tags](https://img.shields.io/github/tag/shrikeh/ansible-curl.svg)][github]
 [![GitHub Stars](https://img.shields.io/github/stars/shrikeh/ansible-curl.svg)][github]
 
