@@ -1,7 +1,7 @@
 # ansible-curl
 [![Galaxy](http://img.shields.io/badge/galaxy-shrikeh.curl-blue.svg)] [galaxy]
-[![Build Status](https://img.shields.io/travis/shrikeh/ansible-curl.svg)][build_status]
-[![GitHub Stars](https://img.shields.io/github/stars/shrikeh/ansible-curl.svg)][github]
+[![Build Status](https://img.shields.io/travis/shrikeh-ansible-roles/ansible-curl.svg)][build_status]
+[![GitHub Stars](https://img.shields.io/github/stars/shrikeh-ansible-roles/ansible-curl.svg)][github]
 
 Installs cURL on hosts in a cross-playform way.
 
@@ -46,7 +46,7 @@ Author Information
 Feel free to hit me up on Twitter @barney_hanlon
 
 [galaxy]: https://galaxy.ansible.com/list#/roles/4384 "Ansible Galaxy"
-[build_status]: https://travis-ci.org/shrikeh/ansible-curl "Build status on travis"
-[github]: https://github.com/shrikeh/ansible-curl "cURL role on Github"
-[curl_pkg_state_latest]: https://github.com/shrikeh/ansible-curl/blob/master/defaults/main.yml#L2 "Variable definition in defaults.yml"
-[curl_update_pkg_mgr]: https://github.com/shrikeh/ansible-curl/blob/master/defaults/main.yml#L3 "Variable definition in defaults.yml"
+[build_status]: https://travis-ci.org/shrikeh-ansible-roles/ansible-curl "Build status on travis"
+[github]: https://github.com/shrikeh-ansible-roles/ansible-curl "cURL role on Github"
+[curl_pkg_state_latest]: https://github.com/shrikeh-ansible-roles/ansible-curl/blob/master/defaults/main.yml#L2 "Variable definition in defaults.yml"
+[curl_update_pkg_mgr]: https://github.com/shrikeh-ansible-roles/ansible-curl/blob/master/defaults/main.yml#L3 "Variable definition in defaults.yml"
